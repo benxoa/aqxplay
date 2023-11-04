@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-39s@8pv8*!_x3ww*$vdtq*lq!tlzb^z4j&@tgyq8uuvw#00mhm"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["www.aqxplay.com", "aqxplay.com"]
 
 
 # Application definition
