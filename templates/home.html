@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="horizontal-image-boxes">
+            {% for p in x %}
+                <div class="p-4 horizontal-image-box">
+                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                        {% if p.image %}
+                            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{p.image.url}}" alt="blog">
+                        {% endif %}
+                        <div class="p-6">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">SUBJECT: {{p.category}}</h2>
+                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{p.title}}</h1>
+                            <p class="leading-relaxed mb-3">{{p.description}}</p>
+                            <div class="flex items-center flex-wrap ">
+                             
+
+                                
+                    <div class="col-md-4">
+                        <div class="card my-2">
+
+                            
+                            
+                          <a href="{% url 'work' p.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+                                     
+                        </div>
+                    </div>
+                  
+                   
+                                
+                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M5 12h14"></path>
+                                  <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                              </a>
+                             
+                            </div>
+                          </div>
+                
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    
+
+
+          {% comment %} <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
+          <a href="{% url 'logout' %}" class="btn btn-dark btn-block btn-sm m-1">Logout</a> {% endcomment %}
+      </ul>
+  </div>
+    <style>
+        .horizontal-image-box {
+            display: inline-block;
+            width: 30%; /* Adjust the width as per your design */
+            margin-right: 20px; /* Add some spacing between the image boxes */
+            vertical-align: top; /* Align the tops of the image boxes */
+            box-sizing: border-box; /* Include padding and borders in the width */
+          }
+          .horizontal-image-boxes {
+            text-align: center; /* Center the content horizontally */
+          }
+          
+          .horizontal-image-box {
+            display: inline-block;
+            width: 30%;
+            margin-right: 20px;
+            vertical-align: top;
+            box-sizing: border-box;
+          }
+                    
+    </style>
+</section>
+{% endblock body %}
