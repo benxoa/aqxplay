@@ -26,7 +26,7 @@ class Publish(models.Model):
     
     title = models.CharField(max_length=77)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    image = models.ImageField(null=False,blank=False)
+    image = models.ImageField(upload_to="uploads/",null=False,blank=False)
     description = models.TextField()
     date = models.DateTimeField(
         auto_now=True)
